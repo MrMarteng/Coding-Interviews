@@ -14,7 +14,7 @@
 
 findIsland::findIsland()
 {
-    
+
 }
 
 inline bool findIsland::isEdge(int row, int col, int num_rows, int num_cols)
@@ -23,6 +23,26 @@ inline bool findIsland::isEdge(int row, int col, int num_rows, int num_cols)
         return true;
     else
         return false;
+}
+
+bool findIsland::compareMatrix(int* pM1, int* pM2, int num_rows, int num_cols)
+{
+    bool retval = true;
+    for(int i=0; (i<(num_rows*num_cols)) && (retval); i++)
+    {
+        if(pM1[i] != pM2[i])
+        {
+            retval = false;
+            std::cout << "XX: " << i << std::endl;
+        }
+    }
+
+    return retval;
+}
+
+void findIsland::copyMatrix(int* pIn, int* pOut, int num_rows, int num_cols)
+{
+    memcpy(pOut, pIn, num_cols*num_rows*sizeof(pIn[0]));
 }
 
 void findIsland::removeIslands(int* pMatrix, int num_rows, int num_cols)
@@ -40,8 +60,6 @@ void findIsland::removeIslands(int* pMatrix, int num_rows, int num_cols)
                     pMatrix[row*num_cols+col] = validateEdgeConnection(pMatrix, row, col, num_rows, num_cols, DIR_NONE);
                 }
             }
-
-            
         }
     }
     

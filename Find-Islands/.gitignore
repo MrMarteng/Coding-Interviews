@@ -1,6 +1,7 @@
 *CMakeFiles
 *.bin
 *.o
+*.out
 CMakeCache.txt
 *.cmake
 Makefile

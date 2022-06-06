@@ -26,7 +26,8 @@ public:
     void removeIslands(int* pMatrix, int num_rows, int num_cols);
 
     static void print2dArray(int* pArray, int num_rows, int num_cols);
-
+    static bool compareMatrix(int* pM1, int* pM2, int num_rows, int num_cols);
+    static void copyMatrix(int* pIn, int* pOut, int num_rows, int num_cols);
 
 private: 
     bool isEdge(int row, int col, int num_rows, int num_cols);
